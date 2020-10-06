@@ -1,0 +1,27 @@
+ul {
+    list-style: none;
+    display: inline-block;
+    color: bisque;
+}
+
+body {
+    font-family: 'Slabo 13px', serif;
+}
+
+body {
+    text-align: center;
+    background-color: bisque;
+}
+
+img {
+    max-height: 300px;
+    padding-bottom: 30px;
+}
+
+li {
+    text-align: center;
+}
+
+p {
+    padding: 30px 20px 10px 20px;
+}

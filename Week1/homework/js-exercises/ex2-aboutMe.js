@@ -9,3 +9,27 @@
  5. See HTML
  6. Create a new img element and set its src attribute to a picture of you.Append that element to the page.
  */
+
+ document.body.style.fontFamily = "Arial, sans-serif"
+ let nickname = document.getElementById('nickname')
+ nickname.innerText = 'megz'
+
+ let favoriteFood = document.getElementById('fav-food')
+ favoriteFood.innerText = 'Sushi'
+
+ let hometown = document.getElementById('hometown')
+ hometown.innerText = 'Cairo'
+
+
+ let listItems = document.getElementsByTagName('li')
+
+ for (let i = 0; i < listItems.length; i++ ) {
+     listItems[i].className = "list-item"
+ }
+
+
+ let myPic = document.createElement('img');
+myPic.src =  'https://i.ibb.co/w4Nt6Lk/Processed-with-VSCO-with-b4-preset.jpg';
+document.body.appendChild(myPic);
+
+

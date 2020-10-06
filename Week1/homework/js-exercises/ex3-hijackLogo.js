@@ -1,4 +1,4 @@
-/**
+ /**
  
  ** Exercise 3: The logo hijack **
  
@@ -13,7 +13,10 @@
  */
 
 function hijackGoogleLogo() {
-  // your code goes in here
+ let googleLogo = document.getElementById('hplogo')
+ googleLogo.src = 'https://www.hackyourfuture.dk/static/logo-dark.svg'
+ googleLogo.style.width = '2rem'
+ googleLogo.srcset = ' '
 }
 
 hijackGoogleLogo();

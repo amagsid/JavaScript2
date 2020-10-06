@@ -12,7 +12,10 @@
  */
 
 function displayCurrentTime() {
-  // your code goes in here
+  document.getElementById("time").innerHTML = new Date().toString().substring(15, 24);
 }
 
+console.log(new Date())
+
 setInterval(displayCurrentTime, 1000);
+

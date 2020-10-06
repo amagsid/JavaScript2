@@ -1,1 +1,28 @@
-<!-- Your code goes in here -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quote Generator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Piazzolla:ital,wght@0,400;0,500;0,600;1,100;1,200;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css"> 
+</head>
+<body>
+    <!-- I wanted to start applying BEM on a small scale just to try it out-->
+    <div class="quoteGenerator">
+        <div class="quoteGenerator__paragraph">
+            <img class="quoteGenerator__paragraph__quote" src="https://i.ibb.co/C9n09vj/Untitled-1-01.png" alt="Untitled-1-01" border="0">
+            <p class="quoteGenerator__paragraph__text" id="quotedisplay"></p>
+        </div>
+        <div class="buttons">
+            <div class="buttons__social"> 
+                <a> <img src="https://i.ibb.co/0YHq6zQ/fb-copy.jpg" alt="fb-copy" border="0"></a>
+                <a> <img src="https://i.ibb.co/Z2RSSMN/twitter-copy.jpg" alt="twitter-copy" border="0"></a>
+            </div>
+            <button class="buttons__newQuote" id ="quote-button"> New Quote </button>
+        </div>
+    </div>
+
+    <script src="index.js"> </script>
+</body>
+</html>

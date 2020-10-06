@@ -15,27 +15,51 @@
   https: //hyf-js2-week1-makeme-ex1-demo.herokuapp.com/
 
   */
+ const books = [{
+  title: 'The Design of Everyday Things',
+  author: 'Don Norman',
+  alreadyRead: false
+},
+{
+  title: 'The Most Human Human',
+  author: 'Brian Christian',
+  alreadyRead: true
+},
+{
+  title: 'The Pragmatic Programmer',
+  author: 'Andrew Hunt',
+  alreadyRead: true
+}
+];
 
 function createBookList(books) {
-  // your code goes in here, return the ul element
-}
 
-const books = [{
-    title: 'The Design of Everyday Things',
-    author: 'Don Norman',
-    alreadyRead: false
-  },
-  {
-    title: 'The Most Human Human',
-    author: 'Brian Christian',
-    alreadyRead: true
-  },
-  {
-    title: 'The Pragmatic Programmer',
-    author: 'Andrew Hunt',
-    alreadyRead: true
+  let bookList = document.createElement('ul')
+  books[0].img = "https://media.s-bol.com/7ov383lj3Rr/550x824.jpg"
+  books[1].img = "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1295465264l/8884400.jpg"
+  books[2].img = "https://images-na.ssl-images-amazon.com/images/I/41as+WafrFL._SX396_BO1,204,203,200_.jpg"
+
+  for (let i = 0; i < books.length; i++) {
+    let bookP = document.createElement('p');
+    let bookItem = document.createElement('li')
+    let bookImg = document.createElement('img');
+    
+    let bookTitleAuthor = document.createTextNode(books[i].title + ' by ' + books[i].author);
+    bookP.appendChild(bookTitleAuthor);
+    bookImg.src = books[i].img;
+    bookItem.appendChild(bookP);
+    bookItem.appendChild(bookImg);
+    bookList.appendChild(bookItem);
+
+  if (books[i].alreadyRead) {
+    bookItem.style.backgroundColor = 'green'
+  } else {
+    bookItem.style.backgroundColor = 'red'
   }
-];
+
+}
+  document.body.appendChild(bookList);
+}
 
 let ulElement = createBookList(books);
 
