@@ -1,0 +1,74 @@
+* {
+    
+    padding: 0;
+    margin: 0;
+}
+
+@font-face{
+    font-family:'digital-clock-font';
+    src: url(digital-7.ttf);
+   }
+
+
+body {
+    line-height: 2.6;
+    background: darkorange;
+    height: 100vh;
+    font-family: 'Commissioner', sans-serif;
+    color: white;
+    font-size: 16px;
+    /* font-family: 'VT323', monospace; */
+    /* font-family:'digital-clock-font'; */
+}
+
+h1 {
+    font-size: 2rem;
+    margin-top: 1.5rem;
+}
+
+
+.pomodoro-container{
+    text-align: center;
+    width: 20%;
+    height:60%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.session {
+    border: solid 3px #712c17;
+    border-radius: 20px;
+   height: 150px;
+}
+
+.minute-counter {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+}
+
+
+.minute-counter p {
+    
+    font-family: 'VT323', monospace;
+    font-size: 2rem;
+    line-height: 1.2;
+    }
+
+
+
+.buttons {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+
+.minutes {
+    font-size: 1.5rem;
+
+}
+
+.fas {
+    margin: auto 0;
+    cursor: pointer;
+}

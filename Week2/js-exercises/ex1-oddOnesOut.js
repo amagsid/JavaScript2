@@ -7,15 +7,13 @@
  The function should still behave the same.
 
  */
-function doubleEvenNumbers(numbers) {
-  const newNumbers = [];
-  for (let i = 0; i < numbers.length; i++) {
-    if (numbers[i] % 2 === 0) {
-      newNumbers.push(numbers[i] * 2);
-    }
-  }
-  return newNumbers;
-}
 
 const myNumbers = [1, 2, 3, 4];
-console.log(doubleEvenNumbers(myNumbers)); // Logs "[4, 8]" to the console
+
+let doubleEvenNumbers =(numbers) => {
+    let newNumbers = numbers.filter(numbers => (numbers % 2 == 0))
+    newNumbers = newNumbers.map(numbers => numbers * 2 )
+    return newNumbers
+  };
+
+  console.log(doubleEvenNumbers(myNumbers))

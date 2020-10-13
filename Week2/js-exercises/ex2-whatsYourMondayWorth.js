@@ -11,10 +11,12 @@
 
  */
 
-
-function dayWorth(tasks, hourlyRate) {
+let dayWorth = (tasks, hourlyRate) => {
   // put your code in here, the function does returns a euro formatted string
-}
+    let duration = tasks.map( x => ((x.duration) / 60 ) * hourlyRate)
+    durationSum = duration.reduce( (total, duration) => total + duration )
+    return '€' + durationSum.toFixed(2)
+  } 
 
 const mondayTasks = [{
     name: 'Daily standup',
@@ -34,5 +36,6 @@ const mondayTasks = [{
   },
 ];
 
-console.log(dayWorth(mondayTasks, 25))
-console.log(dayWorth(mondayTasks, 13.37))
+
+console.log(dayWorth(mondayTasks , 25))
+  

@@ -7,15 +7,22 @@
  Use the map and / or forEach function to put each hobby into a list item
  Put the list items in an unordered list
  */
-
 function createHTMLList(arr) {
-  // your code goes in here
+    const ul = document.createElement('ul');
+    
+    arr.forEach((item) => {
+    const li = document.createElement('li');
+    li.innerHTML = item
+    ul.appendChild(li);
+  });
+  document.body.appendChild(ul);
 }
-
 const myHobbies = [
-  'Meditation',
-  'Reading',
-  'Programming',
-  'Hanging out with friends',
-  'Going to the gym',
-];
+    'Meditation',
+    'Reading',
+    'Programming',
+    'Hanging out with friends',
+    'Going to the gym',
+  ];
+
+  createHTMLList(myHobbies);

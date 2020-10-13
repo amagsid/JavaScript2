@@ -5,13 +5,36 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pomodoro Clock</title>
+  <script src="https://kit.fontawesome.com/3fce6c0a45.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <div id="app">
+  <!--  <i class="fas fa-stop-circle"></i> -->
+  <div id="app" class="pomodoro-container">
+    <h1> Pomodoro Clock </h1>
+    <h2> Session Length</h2>
+    <div class="minute-counter"> 
+      <i class="fas fa-arrow-circle-down fa-2x" id="minute-down"></i>
+      <p class="chosen-minutes" id="chosen-minutes"> </p>
+      <i class="fas fa-arrow-circle-up fa-2x" id="minute-up"> </i>
+    </div>
+
+    <div id="session" class="session">
+      <h2> Session </h2>
+      <p id="timer-display"> 0:00 </p>
+    </div>
+
+    <div class="buttons">
+      <i  class="fas fa-play-circle fa-2x" id="play"> </i>
+      <i class="fas fa-pause-circle fa-2x" id="pause"> </i>
+    </div>
+
 
   </div>
-  <script src="index.js"></script>
+  <script src="app.js"></script>
 </body>
 
 </html>
