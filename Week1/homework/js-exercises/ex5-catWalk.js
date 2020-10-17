@@ -11,59 +11,44 @@
  6. When the cat reaches the middle of the screen, replace the img with an image of a cat dancing(use this URL: https: //tenor.com/StFI.gif), keep it dancing for 5 seconds, and then replace the img with the original image and have it continue the walk.
  
 */
+'use strict'
 
 let catGif = document.querySelector('img')
-catGif.style.left ='0px';
-
-function catWalk() {
-  let currentLeftSpace = parseInt(catGif.style.left)
- 
-  catGif.style.left = (currentLeftSpace + 10) + 'px'
-  //I tried almost everything to complete the exercise and replacing the gif in the middle of the
-  //screen by declaring the middle of the screen as a variable through subtracting window.innerWidth minus left size of the
-  //screen to get the right space and checking if both equal. I also tried checking if currentLeftSpace is equal to (window.innerWidth / 2)
-  //with no luck
-  let currentRightSpace = window.innerWidth - currentLeftSpace
-  if (currentRightSpace === currentLeftSpace ) {
-    //setTimeout(catImage.src='https://media1.tenor.com/images/2de63e950fb254920054f9bd081e8157/tenor.gif',1000)
-}
-
-  if (currentLeftSpace > (window.innerWidth - catGif.width) ) {
-   catGif.style.left = '0px';
-  }
-};
-window.setInterval(catWalk, 50)
-
- /* let catGif = document.querySelector('img');
+let space = 10
 catGif.style.left = '0px';
 
+// catwalk function 
+function catWalk(){
+  let currentPosition = parseInt(catGif.style.left)
+  catGif.style.left = (currentPosition + space) + 'px'
+  if(currentPosition >= ((window.innerWidth / 2) - (catGif.width / 2))){
+    stopCatWalk()
+  };
+};
 
-function catWalk() {
-  var currentLeft = parseInt(catGif.style.left);
+// function to stop the cat and replace the GIF
+function stopCatWalk(){
+  clearInterval(interval)
+  catGif.src =  'https://media.tenor.com/images/b413d00f7c04ec226e2ffda388d322ae/tenor.gif'
+  catGif.style.width = '300px'
+  setTimeout(continueWalk, 5000)
+};
 
-  catGif.style.left = (currentLeft + 10) + 'px';
-  if (currentLeft > (window.innerWidth-catGif.width)) {
-    catGif.style.left = '0px';
-  }
-}
-window.setInterval(catWalk, 50); 
-
-
-/* let catImage = document.querySelector('img')
-catImage.style.left = '0px'
-
-var space = 0;
-function catWalk() {
-    space += 10;
-    catImage.style.left = space + 'px';
-
-    
-    if (space > (window.innerWidth - catImage.width)) {
-      catImage.style.left = '0px'
-      }
-    
-    
+//continue
+function continueWalk(){
+  catGif.src = 'http://www.anniemation.com/clip_art/images/cat-walk.gif';
+  let continueInterval = setInterval(function(){
+    let PositionAfterStop = parseInt(catGif.style.left)
+    catGif.style.left = (PositionAfterStop + space) + 'px'
+    if(PositionAfterStop > window.innerWidth){
+      clearInterval(continueInterval)
+      catGif.style.left = '0px'
+      interval = setInterval(catWalk, 50)
+    }
+  }, 50);
 
 };
 
-moveVar = setInterval(catWalk, 50); */
+
+
+let interval = setInterval(catWalk, 50);
