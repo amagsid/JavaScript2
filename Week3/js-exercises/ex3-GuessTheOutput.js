@@ -19,3 +19,6 @@ const x = (function () {
 })();
 
 x();
+
+//the output here will be 12. That's because the value of 'a' was reassigned to 12 inside the const x function, which is
+//in the lexical scope in relation to the closure funtion

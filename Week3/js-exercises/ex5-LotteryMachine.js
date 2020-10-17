@@ -27,12 +27,33 @@ Don't you just love the thrill of the lottery? What if I told you we can make ou
 */
 
 function threeFive(startIndex, stopIndex, threeCallback, fiveCallback) {
+ 
   const numbers = [];
-  // make array
+  for (let i = startIndex; i <= stopIndex ; i++ ) {
+    numbers.push(i)
+  }
+
+  numbers.forEach(function (number) {
+    if (Number.isInteger(number / 3)  ) {
+       threeCallback();
+    } else if (Number.isInteger(number / 5)) {
+      fiveCallback();
+    } else if ( Number.isInteger(number / 3) && Number.isInteger(number / 5) ) {
+      threeCallback();
+      fiveCallback();
+    }
+
+  })
+
+
+  
+  // make array starting from startIndex to stopIndex
   // start at beginning of array and check if you should call threeCallback or fiveCallback or go on to next
 }
 
-threeFive(10, 15, sayThree, sayFive);
+//threeFive(10, 15, sayThree, sayFive);
+
+
 
 // Should create an array [10,11,12,13,14,15]
 // and call sayFive, sayThree, sayThree, sayFive

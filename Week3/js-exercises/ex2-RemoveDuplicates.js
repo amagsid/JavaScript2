@@ -15,7 +15,12 @@ does not return anything but removes any duplicate elements from the array.
 
 const letters = ['a', 'b', 'c', 'd', 'a', 'e', 'f', 'c', 'b'];
 
-removeDuplicates(letters);
+function removeDuplicates(array) {
+  return array.filter((item1, item2) => array.indexOf(item1) === item2)
+};
+
+console.log(removeDuplicates(letters));
+
 
 if (letters === ['a', 'b', 'c', 'd', 'e', 'f'])
   console.log("Hooray!")

@@ -10,10 +10,19 @@ Call the function three times. The return values should be:
 
  */
 
-function createBase( /* ???? */ ) {
-  // Put here your logic...
-}
-
-const addSix = createBase(6);
+ //the function `createBase` takes a number as a parameter and returns a closure
+function createBase(number) {
+  return function() {
+    //add a number to the base number argument
+    number = number + 9
+    return number
+  }
+};
 
 // Put here your function calls...
+const addSix = createBase(6);
+console.log(addSix())
+console.log(addSix())
+console.log(addSix())
+
+

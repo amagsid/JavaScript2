@@ -27,3 +27,6 @@ function f2(val) {
 }
 f2(y);
 console.log(y);
+
+
+//the output will be {x: 10}. That is because we passed the argument as 'val.x' which refers go the 'const y' object
