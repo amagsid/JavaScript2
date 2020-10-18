@@ -1,3 +1,4 @@
+'use strict'
 /**
  
  ** Exercise 5: The lottery machine **
@@ -25,9 +26,6 @@ Don't you just love the thrill of the lottery? What if I told you we can make ou
  if the array value is divisible by both 3 and 5.
 
 */
-
-
-
 
 function sayThree() {
   console.log(3)
