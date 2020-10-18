@@ -31,32 +31,32 @@ Don't you just love the thrill of the lottery? What if I told you we can make ou
 
 function sayThree() {
   console.log(3)
- }
+ };
 
 function sayFive() {
   console.log(5)
- }
+ };
 
 function threeFive(startIndex, stopIndex, threeCallback, fiveCallback) {
-
   const numbers = [];
   for (let i = startIndex; i <= stopIndex ; i++ ) {
     numbers.push(i)
   }
 
-  console.log(numbers)
-
   numbers.forEach(function (number) {
-    if (number % 3 == 0 ) {
+    if (number  % 3 == 0 && number % 5 == 0  ) {
+      fiveCallback();
+      threeCallback();
+    }
+    else if (number % 3 == 0 ) {
       threeCallback();
     } else if (number % 5 == 0) {
       fiveCallback();
     }
   })
+};
 
-}
-console.log(threeFive(1, 10, sayThree, sayFive))
-  
+threeFive(10, 15, sayThree, sayFive)  
   // make array starting from startIndex to stopIndex
   // start at beginning of array and check if you should call threeCallback or fiveCallback or go on to next
 
