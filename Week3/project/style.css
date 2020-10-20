@@ -1,0 +1,110 @@
+* {
+  padding: 0;
+  margin:0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 16px;
+  font-family: Roboto;
+  background: linear-gradient(to left, #8E0E00, #1F1C18);
+}
+
+.container {
+  text-align: center;
+  height: 65vh;
+  width: 30vw;
+  margin: 150px auto;
+  background: whitesmoke;
+  border-radius: 25px;
+}
+  
+h1 {
+  background: #1F030C;
+  color: white;
+  margin: 10px auto;
+  padding: 10px 0px 10px 0px;
+  font-size: 1.5rem;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+}
+  
+p {
+  font-size: 1.25rem;
+  padding-bottom: 5px;
+  font-weight: 500;
+}
+  
+input, select {
+  padding-left: 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+.bill {
+  font-size: 14px;
+  background-color: #f7f7f7;
+  padding: 5px 5px 8px 8px;
+}
+
+.bill:focus {
+  font-size: large
+}
+
+.people {
+  width: 30%;
+  padding: 5px 8px 5px 8px;
+  background-color: #f7f7f7;
+  font-size: 1rem;
+}
+.people:focus {
+  font-size: large
+
+}
+h4 {
+  display: inline-block;
+  
+}
+
+.dollarSign {
+  display: inline;
+}
+
+.service {
+  padding: 5px 5px 5px 5px;
+  font-size: 1rem;
+}
+  
+button {
+  color: white;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  display: block;
+  margin: 30px auto;
+  background: #58201e;
+  border-radius: 5px;
+  width: 10vw;
+  height: 4vh;
+}
+  
+button:hover {
+  background: #991c17;
+}
+  
+button:active {
+  position: relative;
+  top: 1px;
+}
+  
+.amount {
+  font-size: 1.25rem;
+  margin-top: 5px;
+  text-align: center;
+}
+
+.tip h4 {
+  font-weight: 100;
+  position:relative;
+  bottom: 5px;
+}
