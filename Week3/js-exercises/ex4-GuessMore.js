@@ -1,5 +1,6 @@
-/**
+'use strict'
 
+/**
 ** Exercise 4: Guess more **
 
 Look at the bellow code snippet.

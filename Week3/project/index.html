@@ -15,7 +15,7 @@
       <div  class="calculator" id="calculator">
         <form>
           <p> How much was your bill? </p>
-          <p> <span class="dollar-sign"> $ </span> <input class="bill" id="bill" type="text" placeholder="amount"> </p>
+          <p> <span > $ </span> <input class="bill" id="bill" type="number" placeholder="amount"> </p>
           <p>How was your service? </p>
           <select class="service" id="service">
             <option disabled selected value="0"> Choose an Option... </option>
@@ -28,13 +28,13 @@
         </form>
 
       <p> How many people are sharing the bill? </p>
-      <input class="people" id="people" type="text" placeholder="number"> <h4> people </h4>
+       <input class="people" id="people" type="text" placeholder=""> <h4> people </h4>
       <button type="button" id="calculate-button">Calculate</button>
     </div>
     
     <div class="tip">
-      <p class="amount" id="total-amount"> Total Amount </p>
-      <p>$<span id="tip">0.00</span></p>
+      <p class="amount" id="total-amount"> tip amount is:</p>
+      <p><span id="dollar-sign">$</span><span id="tip">0.00</span></p>
       <h4 id="each">each</h4>
     </div>
   </div>

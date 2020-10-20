@@ -6,6 +6,7 @@
 let each = document.getElementById("each");
 let totalAmount = document.getElementById("total-amount");
 let calculateButton = document.getElementById("calculate-button");
+let dollarSign = document.getElementById("dollar-sign");
 
 //CalculateTip function 
 function calculateTip() {
@@ -38,6 +39,12 @@ function calculateTip() {
   //display tip amount only if it's a number
   if (!isNaN(total)) {
     tip.innerHTML = total;
+    tip.style.color =  'rgba(236,95,5,1)'
+    tip.style.fontSize =  '2.5rem'
+    tip.style.fontWeight =  '500';
+    dollarSign.style.color = '#80D0C7'
+    dollarSign.style.fontSize = '2rem'
+    dollarSign.style.paddingRight = '5px'
   };
 };
   

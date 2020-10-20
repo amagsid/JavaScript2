@@ -18,7 +18,7 @@ function catWalk(){
 function stopCatWalk(){
     clearInterval(interval);
     catGif.src = 'https://media.tenor.com/images/b413d00f7c04ec226e2ffda388d322ae/tenor.gif';
-    catGif.style.width = '15rem';
+    catGif.style.width = '300px';
     setTimeout(continueCatWalk, 5000);
 };
 
