@@ -11,7 +11,6 @@ const stopBtn = document.getElementById('stop');
 const minutesIndicator = document.getElementById('minutes');
 const secondsIndicator = document.getElementById('seconds');
 
-
 let sessionLength = 1; // minutes
 const intervalLength = 1; // seconds
 let sessionIsOn = false;
@@ -22,7 +21,7 @@ let interval = false;
 // time object
 const time = new Date();
 
-//arrow up (increase) button function
+//arrow up button function
 function increaseMinute() {
   if (!sessionIsOn) {
     sessionLength++;
@@ -32,7 +31,7 @@ function increaseMinute() {
 }
 
 
-////arrow down (decrease) button function
+////arrow down button function
 function decreaseMinute() {
   if (!sessionIsOn && sessionLength > 0) {
     sessionLength--;
@@ -88,10 +87,6 @@ function pause() {
     interval = false;
   }
 }
-
-
-
-
 
 //event listeners
 window.addEventListener('DOMContentLoaded', reset);
