@@ -1,40 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pomodoro Clock</title>
+    <script
+      src="https://kit.fontawesome.com/3fce6c0a45.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=VT323&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pomodoro Clock</title>
-  <script src="https://kit.fontawesome.com/3fce6c0a45.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;600&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
-</head>
+  <body>
+    <!--  <i class="fas fa-stop-circle"></i> -->
+    <div id="app" class="pomodoro-container">
+      <h1>Pomodoro Clock</h1>
+      <h2>Session Length</h2>
+      <div class="minute-counter">
+        <i class="fas fa-arrow-circle-down fa-2x" id="minute-down"></i>
+        <p class="session-length" id="session-length">1</p>
+        <i class="fas fa-arrow-circle-up fa-2x" id="minute-up"> </i>
+      </div>
 
-<body>
-  <!--  <i class="fas fa-stop-circle"></i> -->
-  <div id="app" class="pomodoro-container">
-    <h1> Pomodoro Clock </h1>
-    <h2> Session Length</h2>
-    <div class="minute-counter"> 
-      <i class="fas fa-arrow-circle-down fa-2x" id="minute-down"></i>
-      <p class="chosen-minutes" id="chosen-minutes"> </p>
-      <i class="fas fa-arrow-circle-up fa-2x" id="minute-up"> </i>
+      <div id="session" class="session">
+        <h2>Session</h2>
+        <p id="timer-display">
+          <span id="minutes">00</span>:<span id="seconds">00</span>
+        </p>
+      </div>
+
+      <div class="buttons">
+        <i class="fas fa-play-circle fa-2x" id="play"> </i>
+        <i class="fas fa-stop-circle fa-2x" id="stop"></i>
+        <i class="fas fa-pause-circle fa-2x" id="pause"> </i>
+      </div>
     </div>
-
-    <div id="session" class="session">
-      <h2> Session </h2>
-      <p id="timer-display"> 0:00 </p>
-    </div>
-
-    <div class="buttons">
-      <i  class="fas fa-play-circle fa-2x" id="play"> </i>
-      <i class="fas fa-pause-circle fa-2x" id="pause"> </i>
-    </div>
-
-
-  </div>
-  <script src="app.js"></script>
-</body>
-
+    <script src="app.js"></script>
+  </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+

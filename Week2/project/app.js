@@ -1,64 +1,103 @@
-//after a number of trials, I'm still struggling to get the clock working properly.
-//I communicated about this with the HYF team and I'll keep working on it till it's complete.
+// grabbing HTML elements
+const arrowDown = document.getElementById('minute-down');
+const arrowUp = document.getElementById('minute-up');
+const sessionLengthIndicator = document.getElementById('session-length');
+//buttons and timer minuite choice
+const playBtn = document.getElementById('play');
+const pauseBtn = document.getElementById('pause');
+const stopBtn = document.getElementById('stop');
 
-const arrowDown = document.getElementById('minute-down')
- const arrowUp = document.getElementById('minute-up')
- const chosenMinutes = document.getElementById('chosen-minutes')
- const timerDisplay = document.getElementById('timer-display')
- const playBtn = document.getElementById('play')
- const pauseBtn = document.getElementById('pause')
- let number = 0;
- let minutes = parseInt(chosenMinutes.innerHTML)
- let seconds = Math.floor(minutes / 60)
+// timer screen
+const minutesIndicator = document.getElementById('minutes');
+const secondsIndicator = document.getElementById('seconds');
 
 
- //a function that updates the timer input from the picker
+let sessionLength = 1; // minutes
+const intervalLength = 1; // seconds
+let sessionIsOn = false;
 
- function updateTime(){
-   let minutes = parseInt(chosenMinutes.innerHTML)
-   let seconds = Math.floor(minutes / 60)
-   timerDisplay.innerText = ` ${minutes}:${seconds} `
- }
+// object returned by setInterval()
+let interval = false;
 
-//increase and decrease arrows 
+// time object
+const time = new Date();
 
-//increase button function
-function increaseMinute(){
-  chosenMinutes.innerHTML =  number += 1 
-    updateTime()
-    }
-
-//decrease button function
-function decreaseMinute(){
-  if (number === 0) {
-    chosenMinutes.innerHTML = `can't let you go back in time`
-  } else {
-    chosenMinutes.innerText = number -= 1
+//arrow up (increase) button function
+function increaseMinute() {
+  if (!sessionIsOn) {
+    sessionLength++;
+    sessionLengthIndicator.innerHTML = sessionLength;
+    reset();
   }
-  updateTime() 
 }
 
-//Timer function
- function timerInit () {
-   minutes = parseInt(chosenMinutes.innerHTML);
-  var seconds = Math.floor(minutes / 60);
-  setInterval(function() {
-    timerDisplay.innerHTML = minutes + " : " + seconds;
-    seconds--;
 
-//numbers here were essentially a place holder
-    if (sec == 00) {
-      minutes --;
-      seconds = 60;
-      if (minutes == 0) {
-        minute = 5;
-      }
-    }
-  }, 1000);
+////arrow down (decrease) button function
+function decreaseMinute() {
+  if (!sessionIsOn && sessionLength > 0) {
+    sessionLength--;
+    sessionLengthIndicator.innerHTML = sessionLength;
+    reset();
+  }
 }
+
+function reset() {
+  time.setMinutes(sessionLength);
+  time.setSeconds(0);
+  sessionIsOn = false;
+  showTime();
+}
+
+function countdown() {
+  if (time.getMinutes() === 0 && time.getSeconds() === 0) {
+    stop();
+    displayAlert();
+  } else {
+    time.setSeconds(time.getSeconds() - intervalLength);
+    showTime();
+  }
+}
+function showTime() {
+  minutesIndicator.innerHTML = showTwoDigits(time.getMinutes());
+  secondsIndicator.innerHTML = showTwoDigits(time.getSeconds());
+}
+function showTwoDigits(number) {
+  return ('0' + number).slice(-2);
+}
+function displayAlert() {
+  console.log("Time's up!");
+}
+
+
+function play() {
+  if (!interval && sessionLength > 0) {
+    interval = setInterval(countdown, 1000 * intervalLength);
+    sessionIsOn = true;
+  }
+}
+function stop() {
+  if (interval || sessionIsOn) {
+    clearInterval(interval);
+    interval = false;
+    reset();
+  }
+}
+function pause() {
+  if (interval) {
+    clearInterval(interval);
+    interval = false;
+  }
+}
+
+
+
+
 
 //event listeners
-arrowUp.addEventListener('click', increaseMinute)
-arrowDown.addEventListener('click', decreaseMinute)
-playBtn.addEventListener('click', timerInit)
-//pauseBtn.addEventListener('click', pauseTimer)
+window.addEventListener('DOMContentLoaded', reset);
+arrowUp.addEventListener('click', increaseMinute);
+arrowDown.addEventListener('click', decreaseMinute);
+
+playBtn.addEventListener('click', play);
+pauseBtn.addEventListener('click', pause);
+stopBtn.addEventListener('click', stop);
